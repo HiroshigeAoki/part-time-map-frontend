@@ -106,7 +106,7 @@ function getUserData(latlng){
 //クエリ情報をバックエンドに送るメソッド
 async function search(query){
   // JSONの取得
-  const response = await fetch("http://localhost:8000/api/jobs/search",{
+  const response = await fetch("https://part-time-map-api-6m2kjp5hoq-an.a.run.app/api/jobs/search",{
         method: 'POST',
         body: query,
         headers: {
@@ -147,6 +147,58 @@ function createMap(latlng) {
     };
     const mapDiv = document.getElementById('map');
     return new google.maps.Map(mapDiv, mapOptions);
+}
+
+function addResults(map, results) {
+  for (let i = 0; i<results.length; i++) {
+    const marker = new google.maps.Marker({ // マーカーの追加
+      position: latlng, // マーカーを立てる位置を指定
+      map: map, // マーカーを立てる地図を指定
+      icon: './img/custom_pin.png'
+    });
+    const info = 
+        '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 style="font-size:20px;" id="firstHeading" class="firstHeading">' +
+            results[0][j] +
+          '</h1>' +
+            '<div id="bodyContent">' +
+              '<p><コメント> ' + 
+              results[1][j] +
+              '</p>' +
+              '<p><給料> ' +
+              results[2][j] + 
+              '</p>' +
+              '<p><a href=' +
+              results[3][j] +
+                ">" +
+                "募集サイトに移動する</a>" +
+              '</p>' +
+            "</div>" +
+        "</div>";
+    const iwopts = {
+      content: info,
+      //maxWidth: 250,
+      position: marker['position'],
+    };
+    const infoWindow = new google.maps.InfoWindow(iwopts);
+    marker.addListener("click", ()=> {
+      infoWindow.open({
+        anchor: markers[i],
+        map,
+        shouldFocus: false,
+      });
+    });
+    marker.addListener('click', event => {
+      const location = { lat: event.latLng.lat(), lng: event.latLng.lng() };
+      map.panTo(location);
+      if (circle) {
+        circle.setMap(null);
+      }
+      //circle = drawCircle(map, location);
+    });
+  }
 }
 
 //希望条件に会った店舗情報をjsonから読み込む

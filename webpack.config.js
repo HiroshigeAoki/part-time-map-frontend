@@ -14,22 +14,49 @@
  * limitations under the License.
  */
 
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require("webpack");
+const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const CONFIG = {
-  mode: 'development',
+  mode: "development",
 
   entry: {
-    app: './src/app.js'
+    app: "./src/app.js",
+  },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/styles.css", to: "styles.css" },
+        { from: "src/popup.css", to: "popup.css" },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/img", to: "img" },
+      ],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+    new HtmlWebpackPlugin({
+      filename: "map.html",
+      template: "./src/map.html",
+    }),
+  ],
+  output: {
+    path: __dirname + "/public",
+    filename: "index.js",
+    publicPath: "/",
   },
   devServer: {
-    host: '0.0.0.0',
+    host: "0.0.0.0",
     port: 3000,
-    static:{
-      directory: path.join(__dirname, 'src'),
-    }
-  }
+    static: {
+      directory: path.join(__dirname, "src"),
+    },
+  },
 };
 
 module.exports = CONFIG;
