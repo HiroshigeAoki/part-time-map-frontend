@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  frontend:
+    build: .
+    restart: always
+    volumes:
+      - .:/code
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
