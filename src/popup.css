@@ -2,89 +2,84 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 /* normalize css ends here */
 
 html {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     color: #222;
+    background: #f2f2f2;
 }
 
 body {
-    width: 350px;
-    height: 600px;
-}
-
-
-.app {
-    height: 100%;
+    padding-top: 60px;
+    /* Adjust this value as needed */
+    max-width: 350px;
+    height: calc(100vh - 60px);
+    /* Adjust viewport height */
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
+}
+
+.app {
+    width: 80%;
+    min-height: 60%;
+    background: white;
+    border-radius: 16px;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.title { 
-    font-size: 18px;
-    font-weight: 600px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-
-}
-
-code { 
-
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
 }
 
 .label {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #666;
 }
-
-.counter {
-
-}
-
-.button-container { 
-
-}
-
-/*検索がテキストボックスじゃないので削除
-.text { 
-
-}
-*/
 
 .submit {
     border: 0;
     display: inline-block;
     padding: 10px 20px;
-    margin-right: 4px;
-    margin-left: 4px;
-    background-color: rgb(255, 247, 0);
+    margin-top: 20px;
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    color: white;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 30px;
     text-decoration: none;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
     user-select: none;
 }
 
-.button:focus { 
+.submit:focus {
     outline: none;
 }
 
-.button:hover {
-    transform: scale(2.1);
+.submit:hover {
+    background: linear-gradient(to right, #0083b0, #00b4db);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.divider { 
-
+.submit:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
 }

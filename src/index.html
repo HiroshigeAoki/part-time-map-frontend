@@ -1,21 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>TownWorkMap</title>
-    <link rel="stylesheet" href="popup.css" />
-  </head>
-  <body>
-    <!--<div class="app">
-      <p class="label">ポエムテキストを下記に入力してください。</p>
-      <textarea id="mansion-poem-textinput" class="text" rows="5"></textarea>
-      <p class="label">物件名を下記に入力してください。</p>
-      <textarea id="mansion-poem-nameinput" class="text" rows="5"></textarea>
-      <p class="label">キャッチコピーを下記に入力してください。</p>
-      <textarea id="mansion-poem-copyinput" class="text" rows="5"></textarea>
-      <button id="mansion-poem-submit" class="submit">更新</button>
-    </div>-->
-    <form method="get" action="map.html">
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>TownWorkMap</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+  <form method="post" action="map.html">
       <div class="app">
         <label for="commuting_method" class="label">希望通勤手段を選択してください</label>
         <select id="commuting_method" name="commuting_method">
@@ -33,29 +26,7 @@
           <option value="30">30分</option>
         </select>
 
-        <!--
-        <label for="work_time" class="label">希望勤務時間を選択してください</label>
-        <select id="work_time" name="work_time">
-          <option value="6" checked>6:00から</option>
-          <option value="9">9:00</option>
-          <option value="12">12:00</option>
-          <option value="15">15:00</option>
-          <option value="18">18:00</option>
-          <option value="21">21:00</option>
-          <option value="24">24:00</option>
-        </select>
-        -->
-        
-        <!--
-        <label for="commuting_time" class="label">希望通勤時間を選択してください</label>  
-          <p><span class="badge badge-warning1">希望通勤時間</span></p>
-          <input type="range" id="commuting_time" name="commuting_time" min="0" max="11" value="5">
-          
-          
-        <label for="work_time" class="label">希望勤務時間を選択してください</label>
-          <p><span class="badge badge-warning2">希望勤務時間</span></p>  
-          <input type="range" id="work_time" name="work_time" min="0" max="11" value="5">
-        -->
+
         <div class="occupation">
           <p class="label">こだわりを選択してください</p><!--チェックボックス-->
           <label for="occupation2"><input id="occupation2" type="checkbox" name="occupation" value="飲食/フード">飲食/フード</label>
@@ -69,18 +40,13 @@
           <label for="occupation10"><input id="occupation10" type="checkbox" name="occupation" value="軽作業">軽作業</label>
           <label for="occupation11"><input id="occupation11" type="checkbox" name="occupation" value="建築/土木/建設">建築/土木/建設</label>
           <label for="occupation12"><input id="occupation12" type="checkbox" name="occupation" value="工場/製造">工場/製造</label>
-          <label for="occupation13"><input id="occupation13" type="checkbox" name="occupation" value="IT/コンピュータ">IT/コンピュータ</label>
+          <label for="occupation13"><input id="occupation13" type="checkbox" name="occupation" value="IT/コンピュータ">IT/コンピューター</label>
           <label for="occupation14"><input id="occupation14" type="checkbox" name="occupation" value="医療/介護/福祉">医療/介護/福祉</label>
           <label for="occupation15"><input id="occupation15" type="checkbox" name="occupation" value="マスコミ/出版">マスコミ/出版</label>
           <label for="occupation16"><input id="occupation16" type="checkbox" name="occupation" value="芸能">芸能</label>
           <label for="occupation17"><input id="occupation17" type="checkbox" name="occupation" value="ガールズバー/キャバクラ/パブ/クラブ">ガールズバー/キャバクラ/パブ/クラブ</label>
           <label for="occupation18"><input id="occupation18" type="checkbox" name="occupation" value="専門職/その他">専門職/その他</label>
       
-    
-      
-
-    <!--<textarea id="mansion-poem-nameinput" class="text" rows="5"></textarea>-->
-    
     <div class="favorite">
       <p class="label">こだわりを選択してください</p><!--チェックボックス-->
         <label for="favorite1"><input id="favorite1" type="checkbox" name="favorite" value="高収入">高収入</label>
@@ -102,17 +68,8 @@
         <label for="favorite17"><input id="favorite17" type="checkbox" name="favorite" value="履歴書不要">履歴書不要</label>
     </div>
         
-        <!--<textarea id="mansion-poem-copyinput" class="text" rows="5"></textarea>-->
-        <!--<button id="mybtn" value="searchButton" class="submit" onclick="window.open('map.html')">検索</button>-->
         <button id="mybtn" value="searchButton" class="submit" >検索</button>
       </form>
       </div>
-      <!--
-      <script src="popup.mjs" method="get"></script>
-      -->
-    <!--
-    This HTML file opens when you click on icon from the toolbar.
-    To begin the development, run `npm run watch`.
-    To create a production bundle, use `npm run build`.
-  --></body>
+  </body>
 </html>

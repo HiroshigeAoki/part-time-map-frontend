@@ -29,7 +29,7 @@ else {
 
  //APIキー取得
 const apiOptions = {
-    apiKey: "AIzaSyA4jvwp5FVdxzVhl5cZbsNqKN_WjDlQcgw"
+    apiKey: ""
 }
 const loader = new Loader(apiOptions);
 
